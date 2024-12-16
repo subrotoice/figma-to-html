@@ -135,3 +135,48 @@ p {
   }
 }
 ```
+
+Typography: h1, h2..., P all these
+
+```html
+<h1>Heading 1</h1>
+<h2>Heading 2</h2>
+<h3>Heading 3</h3>
+<p>
+  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur laudantium
+  beatae suscipit reprehenderit quis praesentium.
+</p>
+```
+
+### **Links**
+
+```css
+/* Links */
+a {
+  text-decoration: none;
+}
+
+.link-arrow {
+  color: var(--color-accent);
+  text-transform: uppercase;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.link-arrow::after {
+  content: "-->";
+  margin-left: 5px;
+  transition: margin ease 0.15s;
+}
+
+.link-arrow:hover::after {
+  content: "-->";
+  margin-left: 10px;
+}
+
+@media screen and (min-width: 1024px) {
+  .link-arrow {
+    font-size: 1.5rem;
+  }
+}
+```
