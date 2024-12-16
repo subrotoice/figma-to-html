@@ -183,6 +183,8 @@ a {
 }
 ```
 
+NB: [Sort all css Properties using Command Palette](https://prnt.sc/cS10hYVx1cME)
+
 ## Create a components folder and keep all markup of individual component
 
 ### **Badges**
@@ -332,3 +334,86 @@ Emmit Tricks
 
 **We can use display: block; but there is some other element so it will break to next line. [See](https://prnt.sc/S34aVgxHHX-H)**<br>
 icon-container is totall new class no link with BEM of CSS
+
+### **Buttons**
+
+```html
+<button class="btn btn--primary btn--block">Button</button>
+<button class="btn btn--secondary btn--block">Button</button>
+<button class="btn btn--accent">Button</button>
+<button class="btn btn--outline">Button</button>
+```
+
+```css
+/* Buttons */
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+.btn {
+  border-radius: 40px;
+  border: 0;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin: 1rem 0;
+  padding: 2rem 3rem;
+  text-align: center;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.btn--primary {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.btn--primary:hover {
+  background: #3a8ffd;
+}
+
+.btn--secondary {
+  background: var(--color-secondary);
+  color: #fff;
+}
+
+.btn--secondary:hover {
+  background: #00c8eb;
+}
+
+.btn--accent {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+.btn--accent:hover {
+  background: #ec3000;
+}
+
+.btn--outline {
+  background: #fff;
+  color: var(--color-headings);
+  border: 2px solid var(--color-headings);
+}
+
+.btn--outline:hover {
+  background: var(--color-headings);
+  color: #fff;
+}
+
+.btn--block {
+  width: 100%;
+  display: inline-block;
+}
+
+@media screen and (min-width: 1024px) {
+  .btn {
+    font-size: 1.5rem;
+  }
+}
+```
+
+NB: Always test your code as you go. Don't assume your code is always gonna work
