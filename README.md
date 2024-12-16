@@ -37,7 +37,7 @@ body {
 
 Modular/Component CSS: Break down page into reuseable components ie. button, list, batch, layout, Heading, Text, Card. Then compose them together to build a complex layout. Build each component in isolation(there is nothing in the page) <br />
 
-Do variation on this component using CSS
+Later on, Do variation on this component using CSS
 
 ### **Color Pallette**
 
@@ -148,6 +148,8 @@ Typography: h1, h2..., P all these
 </p>
 ```
 
+NB: Mobile version: Font and everything will be large then desktop version
+
 ### **Links**
 
 ```css
@@ -186,11 +188,16 @@ a {
 ### **Badges**
 
 Block Element Modifier (BEM): CSS class naming convention.
-ie. "badge badge--primary"
 
-- Block(badge): A "block" is a reusable UI element such as a button, card, or badge.
-- Modifier (badge--primary): A variant or state of the block (or element).
-  NB: "badge badge-primary" single hipen also works but it is not the **convension**
+```jsx
+"badge badge--primary", "block__element--modifier";
+```
+
+BEM divides a class name into three parts:
+
+1. Block (badge): A "block" is a reusable UI element such as a button, card, or badge.
+2. Element (block\_\_element): Represents a part or child of the block, separated by \_\_ (double underscores).
+3. Modifier (badge--primary): Represents a variation or state of a block/element, separated by -- (double dashes).
 
 ```html
 <span class="badge badge--primary">10% Off 1</span>
@@ -234,3 +241,94 @@ ie. "badge badge--primary"
   }
 }
 ```
+
+### **Lists**
+
+Emmit Tricks
+
+```html
+<!-- "ul.list>li{Item $} * 3" becomes -->
+<ul class="list">
+  <li>Item 1</li>
+  <li>Item 2</li>
+  <li>Item 3</li>
+</ul>
+```
+
+```html
+<ul class="list list--tick">
+  <li class="list__item">Item 1</li>
+  <li class="list__item">Item 2</li>
+  <li class="list__item">Item 3</li>
+</ul>
+```
+
+```css
+/* Lists */
+.list {
+  list-style: none;
+  padding-left: 0;
+  color: var(--color-headings);
+}
+
+.list--inline .list__item {
+  display: inline-block;
+  margin-right: 2rem;
+}
+
+.list--tick {
+  list-style-image: url(../images/tick.svg);
+  padding-left: 3rem;
+}
+
+.list--tick .list__item {
+  padding-left: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+@media screen and (min-width: 1024px) {
+  .list--tick .list__item {
+    padding-left: 0;
+  }
+}
+```
+
+### **Icons**
+
+.svg are vector image. Combine all svg into one image using svgsprit.es <br>
+[Wrap with container Easy in VS Code](https://prnt.sc/ev-0kyMo4z3x)
+
+```jsx
+<span class="icon-container">
+  <svg class="icon icon--primary">
+    <use xlink:href="images/sprite.svg#wordpress"></use>
+  </svg>
+</span>
+```
+
+**span are inline element. Inline element has no effect of height and width. So use display: block, inline-block, inline-flex**<br>
+
+```css
+/* Icons */
+.icon {
+  width: 40px;
+  height: 40px;
+}
+
+.icon--primary {
+  fill: var(--color-primary);
+}
+
+.icon-container {
+  background: #f3f9fa;
+  width: 64px;
+  height: 64px;
+  border-radius: 100%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+```
+
+**We can use display: block; but there is some other element so it will break to next line. [See](https://prnt.sc/S34aVgxHHX-H)**<br>
+icon-container is totall new class no link with BEM of CSS
