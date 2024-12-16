@@ -180,3 +180,57 @@ a {
   }
 }
 ```
+
+## Create a components folder and keep all markup of individual component
+
+### **Badges**
+
+Block Element Modifier (BEM): CSS class naming convention.
+ie. "badge badge--primary"
+
+- Block(badge): A "block" is a reusable UI element such as a button, card, or badge.
+- Modifier (badge--primary): A variant or state of the block (or element).
+  NB: "badge badge-primary" single hipen also works but it is not the **convension**
+
+```html
+<span class="badge badge--primary">10% Off 1</span>
+<span class="badge badge--secondary">10% Off 1</span>
+<span class="badge badge--primary badge--small">10% Off 1</span>
+<span class="badge badge--secondary badge--small">10% Off 1</span>
+```
+
+```css
+/* Badges */
+
+.badge {
+  border-radius: 20px;
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 0.5rem 2rem;
+  white-space: nowrap;
+}
+
+.badge--primary {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.badge--secondary {
+  background: var(--color-secondary);
+  color: #fff;
+}
+
+.badge--small {
+  font-size: 1.6rem;
+}
+
+@media screen and (min-width: 1024px) {
+  .badge {
+    font-size: 1.5rem;
+  }
+
+  .badge--small {
+    font-size: 1.2rem;
+  }
+}
+```
