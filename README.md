@@ -516,3 +516,86 @@ NB: By default overflow is visiable. To hide it need to set overflow: hidden; in
   color: #fff;
 }
 ```
+
+### **Plans**
+
+```html
+<div class="card-container" style="width: 35%; padding: 2rem">
+  <div class="plan">
+    <div class="card card--secondary">
+      <header class="card__header">
+        <h3 class="plan__name">Entry</h3>
+        <span class="plan__price">$14</span>
+        <span class="plan__billing-cycle">/month</span>
+        <span class="badge badge--secondary badge--small">10% off</span>
+        <span class="plan__description">East start on the cloud</span>
+      </header>
+      <div class="card__body">
+        <ul class="list list--tick">
+          <li class="list__item">Unlimited Websites</li>
+          <li class="list__item">Unlimited Bandwidth</li>
+          <li class="list__item">100 GB SSD Storage</li>
+          <li class="list__item">3 GB RAM</li>
+        </ul>
+        <button class="btn btn--outline btn--block">BUY NOW</button>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+.card--secondary .badge--secondary: Means if .card--secondary and .badge--secondary then following background will be.
+
+```css
+.card--secondary .badge--secondary {
+  background: #02cdf1;
+}
+
+/* Plans */
+.plan__name {
+  color: #fff;
+  margin: 0;
+  font-weight: 500;
+  font-size: 2.4rem;
+}
+
+.plan__price {
+  font-size: 6rem;
+}
+
+.plan__bulling-cycle {
+  font-size: 2.4rem;
+  font-weight: 300;
+  opacity: 0.8;
+  margin-right: 1rem;
+}
+
+.plan__description {
+  font-size: 2rem;
+  font-weight: 300;
+  letter-spacing: 1px;
+  display: block;
+}
+
+.plan .list__item {
+  margin-bottom: 2rem;
+}
+
+@media screen and (min-width: 1024px) {
+  .plan__name {
+    font-size: 1.4rem;
+  }
+
+  .plan__price {
+    font-size: 5rem;
+  }
+
+  .plan__bulling-cycle {
+    font-size: 1.6rem;
+  }
+
+  .plan__description {
+    font-size: 1.7rem;
+  }
+}
+```
