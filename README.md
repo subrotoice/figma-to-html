@@ -417,3 +417,37 @@ icon-container is totall new class no link with BEM of CSS
 ```
 
 NB: Always test your code as you go. Don't assume your code is always gonna work
+
+### **Inputs**
+
+```html
+<input type="text" class="input" placeholder="Enter domain name here..." />
+```
+
+```css
+/* Inputs */
+.input {
+  border-radius: 30px;
+  border: 1px solid #ccc;
+  color: var(--color-headings);
+  font-size: 2rem;
+  outline: 0;
+  padding: 1.5rem 3.5rem;
+}
+
+::placeholder {
+  color: #cdcdd7;
+}
+
+@media screen and (min-width: 1024px) {
+  .input {
+    font-size: 1.5rem;
+  }
+}
+```
+
+### **Input Groups**
+
+```jsx
+
+```
