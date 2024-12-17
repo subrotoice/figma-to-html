@@ -298,6 +298,7 @@ Emmit Tricks
 ### **Icons**
 
 .svg are vector image. Combine all svg into one image using svgsprit.es <br>
+Search in Google "svg sprite generator" <br>
 [Wrap with container Easy in VS Code](https://prnt.sc/ev-0kyMo4z3x)
 
 ```jsx
@@ -473,5 +474,45 @@ Input Group is a illusion where input element has not border but border with inp
 
 .input-group .btn {
   margin: 4px;
+}
+```
+
+### **Cards**
+
+```html
+<div style="width: 30%; padding: 2rem">
+  <!-- This line is for dedemonstration -->
+  <div class="card card--secondary">
+    <header class="card__header">Card Title</header>
+    <div class="card__body">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, esse!
+    </div>
+  </div>
+</div>
+```
+
+NB: By default overflow is visiable. To hide it need to set overflow: hidden; in parent element. Here overflow is internal content ".card--primary .card--header"
+
+```css
+/* Cards */
+.card {
+  border-radius: 7px;
+  box-shadow: 0 0 20px 10px #f3f3f3;
+  overflow: hidden;
+}
+
+.card__header,
+.card__body {
+  padding: 2rem 3rem;
+}
+
+.card--primary .card__header {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.card--secondary .card__header {
+  background: var(--color-secondary);
+  color: #fff;
 }
 ```
