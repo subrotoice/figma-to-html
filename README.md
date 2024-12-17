@@ -448,6 +448,30 @@ NB: Always test your code as you go. Don't assume your code is always gonna work
 
 ### **Input Groups**
 
-```jsx
+Input Group is a illusion where input element has not border but border with input-group and it contains input and button element
 
+```html
+<div class="input-group">
+  <button class="btn btn--accent">Search</button>
+  <input type="text" class="input" placeholder="Enter domain name here..." />
+</div>
+```
+
+```css
+/* Input Group */
+.input-group {
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  display: flex;
+}
+
+.input-group .input {
+  flex-grow: 1;
+  border: 0;
+  padding: 1.5rem 1rem;
+}
+
+.input-group .btn {
+  margin: 4px;
+}
 ```
