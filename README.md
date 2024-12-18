@@ -786,3 +786,172 @@ Basic Rule: 1st: Do markup. then see what is not align with the design fix that 
   }
 }
 ```
+
+### **Testimonials**
+
+It combine gird, image, quotes section
+
+```jsx
+<div class="card testimonial">
+  <div class="grid grid--1x2">
+    <div class="testimonial__image">
+      <img src="images/testimonial.jpg" alt="A Happy, Smiling Customer" />
+      <span class="icon-container icon-container--accent">
+        <svg class="icon icon--white icon--small">
+          <use xlink:href="images/sprite.svg#quotes"></use>
+        </svg>
+      </span>
+    </div>
+    <blockquote class="quote">
+      <p class="quote__text">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam soluta
+        cumque cum architecto nemo. Ex veritatis eos tempore dolores recusandae!
+      </p>
+      <footer>
+        <div class="media">
+          <div class="media__image">
+            <svg class="icon icon--primary">
+              <use xlink:href="images/sprite.svg#line"></use>
+            </svg>
+          </div>
+          <div class="media__body">
+            <h3 class="media__title">John Smith</h3>
+            <p class="media__description">ABC Company</p>
+          </div>
+        </div>
+      </footer>
+    </blockquote>
+  </div>
+</div>
+```
+
+Do some variation(Modifire) on Icons
+Then Work on testimonials
+
+```css
+/* Icons: Add some icon Modifire */
+.icon--small {
+  width: 30px;
+  height: 30px;
+}
+
+.icon--white {
+  fill: #fff;
+}
+
+.icon-container--accent {
+  background: var(--color-accent);
+}
+
+/* Testimonial */
+.testimonial {
+  padding: 3rem;
+}
+
+.testimonial__image {
+  position: relative;
+}
+
+.testimonial__image > img {
+  width: 100%;
+}
+
+.testimonial__image > .icon-container {
+  position: absolute;
+  top: 2rem;
+  right: -32px;
+}
+
+@media screen and (min-width: 768px) {
+  .testimonial .quote,
+  .testimonial .media__title {
+    font-size: 2.4rem;
+  }
+
+  .testimonial .quote {
+    margin-left: 6rem;
+  }
+}
+```
+
+### **Callouts**
+
+Add this class .btn--streatched in buttons section
+
+```jsx
+<div class="callout callout--primary">
+  <div class="grid grid--1x2">
+    <div class="callout__content">
+      <h2 class="callout__heading">Ready to Get Started?</h2>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veniam, harum
+        maxime. Nisi dolores suscipit distinctio voluptate, veritatis nulla ad
+        labore!
+      </p>
+    </div>
+    <a class="btn btn--secondary btn--streatched" href="">
+      Get Stared
+    </a>
+  </div>
+</div>
+```
+
+By default: justify-items is stretch
+
+```css
+.grid {
+  display: grid;
+  justify-items: stretch; /* Default: It need to have "center" */
+  aligin-items: stretch; /* Default */
+}
+/* Both are same: justify-items(For Parent) and justify-self(For Grid Item(Children)) */
+.grid .grid-item {
+  justify-self: stretch; /* Default: It need to have */
+  aligin-self: stretch; /* Default */
+}
+```
+
+.callout .grid--1x2: last column fit content and rest space will taken by first column
+
+```css
+/* Calloutes */
+.callout {
+  padding: 4rem;
+  border-radius: 5px;
+}
+
+.callout--primary {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.callout__heading {
+  color: #fff;
+  margin-top: 0;
+  font-size: 3rem;
+}
+
+.callout .btn {
+  align-self: center;
+  justify-self: center;
+}
+
+.callout__content {
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  .callout__content {
+    text-align: left;
+  }
+
+  .callout .btn {
+    justify-self: start;
+    margin: 0 2rem;
+  }
+
+  .callout .grid--1x2 {
+    grid-template-columns: 1fr auto; /* last column fit content and rest space will taken by first column */
+  }
+}
+```
