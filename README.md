@@ -638,3 +638,114 @@ By doing so if you add plan--popular class to any plan it will works
   width: 40px;
 }
 ```
+
+### **Media Objects: Image on left, Right Title followed by some text**
+
+```jsx
+<div class="media">
+  <div class="media__image">
+    <svg class="icon icon--primary">
+      <use xlink:href="images/sprite.svg#snap"></use>
+    </svg>
+  </div>
+  <div class="media__body">
+    <h3 class="media__title">Easy Start & Managed Updates</h3>
+    <p class="media__description">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam
+      incidunt temporibus delectus voluptate, omnis earum illum harum iste
+      dolores? Excepturi!
+    </p>
+  </div>
+</div>
+```
+
+Basic Rule: 1st: Do markup. then see what is not align with the design fix that with css. Here only 3 class element need to fix to align with design
+
+```css
+/* Media Objects */
+.media {
+  display: flex;
+  gap: 2rem;
+}
+
+.media__title {
+  margin-top: 0;
+}
+
+.media__image {
+  margin-top: 1rem;
+}
+```
+
+### **Quotes**
+
+```jsx
+<blockquote class="quote">
+  <p class="quote__text">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam soluta cumque
+    cum architecto nemo. Ex veritatis eos tempore dolores recusandae!
+  </p>
+  <footer>
+    <div class="media">
+      <div class="media__image">
+        <svg class="icon icon--primary">
+          <use xlink:href="images/sprite.svg#line"></use>
+        </svg>
+      </div>
+      <div class="media__body">
+        <h3 class="media__title">John Smith</h3>
+        <p class="media__description">ABC Company</p>
+      </div>
+    </div>
+  </footer>
+</blockquote>
+```
+
+```css
+/* Quotes */
+.quote {
+  font-size: 3rem;
+  font-style: italic;
+  color: var(--color-body-darker);
+  line-height: 1.3;
+}
+
+.quote__text::before {
+  content: open-quote;
+}
+
+.quote__text::after {
+  content: close-quote;
+}
+
+.quote .media__image {
+  margin-top: 0;
+}
+
+.quote .media__title {
+  font-size: 3rem;
+  margin-bottom: 0;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.quote .media__description {
+  font-size: 2rem;
+  font-style: normal;
+  opacity: 0.4;
+}
+
+@media screen and (mid-width: 1024px) {
+  .quote {
+    font-size: 2rem;
+  }
+
+  .quote .media__title {
+    font-size: 2.4rem;
+  }
+
+  .quote .media__description {
+    font-size: 1.6rem;
+  }
+}
+```
