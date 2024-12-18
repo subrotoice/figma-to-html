@@ -749,3 +749,40 @@ Basic Rule: 1st: Do markup. then see what is not align with the design fix that 
   }
 }
 ```
+
+### **Grid**
+
+```html
+<!-- 2 columns grid  -->
+<div class="grid grid--1x2">
+  <div style="height: 100px; background: gold"></div>
+  <div style="height: 100px; background: dodgerblue"></div>
+  <div style="height: 100px; background: chocolate"></div>
+</div>
+
+<!-- 3 columns grid  -->
+<div class="grid grid--1x3">
+  <div style="height: 100px; background: gold"></div>
+  <div style="height: 100px; background: dodgerblue"></div>
+  <div style="height: 100px; background: chocolate"></div>
+</div>
+```
+
+```css
+/* Grid */
+.grid {
+  display: grid;
+}
+
+@media screen and (min-width: 768px) {
+  .grid--1x2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .grid--1x3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+```
