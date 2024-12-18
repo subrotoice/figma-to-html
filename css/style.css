@@ -286,7 +286,12 @@ a {
 .card {
   border-radius: 7px;
   box-shadow: 0 0 20px 10px #f3f3f3;
-  overflow: hidden;
+  /* overflow: hidden; */
+}
+
+.card__header {
+  position: relative;
+  border-radius: 7px 7px 0 0;
 }
 
 .card__header, .card__body {
@@ -335,6 +340,15 @@ a {
 
 .plan .list__item {
   margin-bottom: 2rem;
+}
+
+.plan--popular .card__header::before {
+  content: url(../images/popular.svg);
+  display: inline-block;
+  position: absolute;
+  right: 5%;
+  top: -5px;
+  width: 40px;
 }
 
 @media screen and (min-width: 1024px) {

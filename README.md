@@ -599,3 +599,42 @@ NB: By default overflow is visiable. To hide it need to set overflow: hidden; in
   }
 }
 ```
+
+### **Popular Badge**
+
+No use extra image tag. Just insert plan--popular variation. and add sudo class ::before
+By doing so if you add plan--popular class to any plan it will works
+
+```html
+<div class="plan plan--popular">
+  <div class="card card--secondary">
+    <header class="card__header">
+      <h3 class="plan__name">Entry</h3>
+      <span class="plan__price">$14</span>
+      <span class="plan__billing-cycle">/month</span>
+      <span class="badge badge--secondary badge--small">10% off</span>
+      <span class="plan__description">East start on the cloud</span>
+    </header>
+    <div class="card__body">
+      <ul class="list list--tick">
+        <li class="list__item">Unlimited Websites</li>
+        <li class="list__item">Unlimited Bandwidth</li>
+        <li class="list__item">100 GB SSD Storage</li>
+        <li class="list__item">3 GB RAM</li>
+      </ul>
+      <button class="btn btn--outline btn--block">BUY NOW</button>
+    </div>
+  </div>
+</div>
+```
+
+```css
+.plan--popular .card__header::before {
+  content: url(../images/popular.svg);
+  display: inline-block;
+  position: absolute;
+  right: 5%;
+  top: -5px;
+  width: 40px;
+}
+```
