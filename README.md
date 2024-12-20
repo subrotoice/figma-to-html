@@ -955,3 +955,74 @@ By default: justify-items is stretch
   }
 }
 ```
+
+### **Collapsibles**
+
+.collapsible\_\_chevron is added to icon. We can do it with ".collapsible .icon" but it is another way. we can do depended up on our need
+
+```jsx
+<div class="collapsible">
+  <header class="collapsible__header">
+    <h2 class="collapsible__heading">Item 1</h2>
+    <span class="icon-container icon-container--small icon-container--grey">
+      <svg class="icon icon--extra--small icon--white collapsible__chevron">
+        <use xlink:href="images/sprite.svg#chevron"></use>
+      </svg>
+    </span>
+  </header>
+  <div class="collapsible__content">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem,
+    sapiente.
+  </div>
+</div>
+```
+
+Here: collapsible--expanded is very wise codding. First create collapsible--expanded version how it looks like. Then toggle the class using javascript<br>
+transition is also great.
+
+```css
+/* Collapsibles */
+.collapsible__header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.collapsible__heading {
+  margin-top: 0;
+  font-size: 3rem;
+}
+
+.collapsible__chevron {
+  transform: rotate(-90deg);
+  transition: transform 0.3s;
+}
+
+.collapsible__content {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+
+.collapsible--expanded .collapsible__chevron {
+  transform: rotate(0);
+}
+
+.collapsible--expanded .collapsible__content {
+  max-height: 100vh;
+  opacity: 1;
+}
+```
+
+1. querySelectorAll: select all ".collapsible" class
+2. addEventListener: register "click" event to all ".collapsible" class useing forEach loop
+3. toggle all "collapsible--expanded"
+
+```js
+const collapsibles = document.querySelectorAll(".collapsible");
+collapsibles.forEach((item) =>
+  item.addEventListener("click", function () {
+    this.classList.toggle("collapsible--expanded");
+  })
+);
+```
