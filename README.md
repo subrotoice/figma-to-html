@@ -1201,3 +1201,53 @@ NB: Styling in html tag is not entertained here. But if necessary you may.
   }
 }
 ```
+
+### **Hero / Banner**
+
+Notice: First place generic class then specific section class ie. hero
+
+```jsx
+<section class="block block--dark block--skewed-left hero">
+  <div class="container grid grid--1x2">
+    <header class="block__header hero__content">
+      <h1 class="block__heading">Cloud Hosting for Pros</h1>
+      <p class="hero__tagline">Deploy your websites in less than 60 seconds.</p>
+      <a href="#" class="btn btn--accent btn--stretched">
+        Get Started
+      </a>
+    </header>
+    <img class="hero__image" src="./images/banner.png" alt="" />
+  </div>
+</section>
+```
+
+Custom polygon
+
+```css
+/* Hero */
+.hero {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 0% 100%);
+}
+
+.hero__tagline {
+  font-size: 2rem;
+  color: #b9c3cf;
+  letter-spacing: 1px;
+  margin: 2rem 0 5rem;
+}
+
+.hero__image {
+  width: 100%;
+}
+
+@media screen and (min-width: 1024px) {
+  .hero {
+    padding-top: 0;
+  }
+
+  .hero__content {
+    text-align: left;
+    align-self: center;
+  }
+}
+```
