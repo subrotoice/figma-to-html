@@ -1026,3 +1026,81 @@ collapsibles.forEach((item) =>
   })
 );
 ```
+
+### **Blocks**
+
+1. .block--skewed-left class we use a google search "css path generator"
+2. [bennettfeely.com](https://bennettfeely.com/clippy)
+
+- .container (max-widht: 1140px) is a individual class we can use it anywhere. For black background we need to add extra div.container
+
+```html
+<section class="block container">
+  <header class="block__header">
+    <h2 class="block__heading">Heading</h2>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum iusto
+      officia sint maxime expedita deserunt maiores assumenda omnis ratione et.
+    </p>
+  </header>
+  <div class="card card--primary">
+    <header class="card__header">Card Title</header>
+    <div class="card__body">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, esse!
+    </div>
+  </div>
+</section>
+<section class="block block--dark block--skewed-left">
+  <div class="container">
+    <h2 class="block__heading">Heading</h2>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum iusto
+      officia sint maxime expedita deserunt maiores assumenda omnis ratione et.
+    </p>
+  </div>
+</section>
+```
+
+1. --padding-vertical: 6rem; creating a variable inside .block class. We can only use it in this section not outside.
+2. calc(var(--padding-vertical) + 4rem) add extra padding for skewed(তির্যক)
+3. clip-path: polygon(x% y%);
+
+```css
+/* Blocks */
+.block {
+  --padding-vertical: 6rem;
+  padding: var(--padding-vertical) 2rem;
+}
+
+.block__header {
+  text-align: center;
+}
+
+.block__heading {
+  margin-top: 0;
+}
+
+.block--dark {
+  background: #000;
+  color: #7b858b;
+}
+
+.block--dark .block__heading {
+  color: #fff;
+}
+
+.block--skewed-right {
+  padding-bottom: calc(var(--padding-vertical) + 4rem);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 80%);
+}
+
+.block--skewed-left {
+  padding-bottom: calc(var(--padding-vertical) + 4rem);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 0% 100%);
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+```
