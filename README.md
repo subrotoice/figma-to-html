@@ -958,6 +958,7 @@ By default: justify-items is stretch
 
 ### **Collapsibles**
 
+Principles: First do style for Collapsible then styel for Extended.<br>
 .collapsible\_\_chevron is added to icon. We can do it with ".collapsible .icon" but it is another way. we can do depended up on our need
 
 ```jsx
@@ -1102,5 +1103,101 @@ collapsibles.forEach((item) =>
 .container {
   max-width: 1140px;
   margin: 0 auto;
+}
+```
+
+NB: Styling in html tag is not entertained here. But if necessary you may.
+
+### **Navigation Bars: Most Important and Difficult**
+
+```jsx
+<nav class="nav collapsible">
+  <a class="nav__brand" href="/" class="">
+    <img src="./images/logo.png" alt="" />
+  </a>
+  <svg class="icon icon--white nav__toggler">
+    <use xlink:href="images/sprite.svg#menu"></use>
+  </svg>
+  <ul class="list nav__list collapsible__content">
+    <li class="nav__item">
+      <a href="#">Hosting</a>
+    </li>
+    <li class="nav__item">
+      <a href="#">VPS</a>
+    </li>
+    <li class="nav__item">
+      <a href="#">Domain</a>
+    </li>
+    <li class="nav__item">
+      <a href="#">Pricing</a>
+    </li>
+  </ul>
+</nav>
+```
+
+```css
+/* Navigation Bars */
+.nav {
+  align-items: center;
+  background: #000;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 1rem;
+}
+
+/* better then .nav .list */
+.nav__list {
+  width: 100%;
+  margin: 0;
+}
+
+.nav__item {
+  padding: 0.5rem 2rem;
+  border-bottom: 1px solid #222;
+}
+
+.nav__item > a {
+  color: #d2d0db;
+  transition: color 0.3s;
+}
+
+.nav__item > a:hover {
+  color: #fff;
+}
+
+.nav__toggler {
+  cursor: pointer;
+  opacity: 0.5;
+  transition: box-shadow 0.15s;
+}
+
+/* <nav class="nav collapsible"> if both class has .nav__toggler then it works */
+.nav.collapsible--expanded .nav__toggler {
+  opacity: 1;
+  box-shadow: 0 0 0 3px #666;
+  border-radius: 5px;
+}
+
+.nav__brand {
+  transform: translateY(5px);
+}
+
+@media screen and (min-width: 768px) {
+  .nav__toggler {
+    display: none;
+  }
+
+  .nav__list {
+    display: flex;
+    font-size: 1.6rem;
+    max-height: 100%;
+    opacity: 1;
+    width: auto;
+  }
+
+  .nav__item {
+    border: 0;
+  }
 }
 ```
