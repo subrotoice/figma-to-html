@@ -1251,3 +1251,37 @@ Custom polygon
   }
 }
 ```
+
+### **Image Optimization**
+
+1. [Some Terms](https://prnt.sc/-rd8gbrj9bwx)
+
+**Basic Idea(A): High density image Retina Display**
+
+```html
+<img src="meal.jpg" class="meal" alt="My Samon Food" />
+<img
+  src="meal-full.jpg"
+  class="meal"
+  alt="My Samon Food"
+  srcset="meal.jpg 1x, meal@2x.jpg 2x, meal@3x.jpg 3x"
+/>
+```
+
+Here 400px; is logical size
+
+```css
+.meal {
+  width: 400px;
+}
+```
+
+NB: Zoom in/out the browser and reload page and see the effect. When we zoom browser then device resulation is fixed but logical web page resulation reduce. So more image need to accumudate in small logical size that increase display density.
+
+- [zoom 1](https://prnt.sc/0zB8SVrkKtfN) Basic
+- [zoom 1.25](https://prnt.sc/aeCn4Vsh1DGN) 2x display: DPR: 2 (Device Pixel Ratio)
+- [Zoom 2.5](https://prnt.sc/JtbLQ11SpCEl) 3x
+- [Network Tab](https://prnt.sc/HlpvAh3BxqBN)
+
+**Resolution Switching(B): [Mobile, Tab, Laptop](https://prnt.sc/XT5zyDM7OXeJ)**<br />
+src: A default fallback image used if srcset isn't supported by the browser.
