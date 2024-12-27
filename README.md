@@ -1284,4 +1284,38 @@ NB: Zoom in/out the browser and reload page and see the effect. When we zoom bro
 - [Network Tab](https://prnt.sc/HlpvAh3BxqBN)
 
 **Resolution Switching(B): [Mobile, Tab, Laptop](https://prnt.sc/XT5zyDM7OXeJ)**<br />
-src: A default fallback image used if srcset isn't supported by the browser.
+src: A default fallback image used if srcset isn't supported by the browser. <br>
+srcset: Provides multiple image options with different resolutions for the browser to choose from. Talling the browser what is the size of this image(When we click properties). Here we can miss guide browser like meal.jpg 900w where it should be meal.jpg 400w. Browser follow our instruction, although actual image size is 400px. here 400w means 400px width <br>
+sizes: What will be the size of the image in that certain viewport. Then browser use algorith and download most suitable image. <br>
+NB: What is for sure here: if viewport max width is 480px then image width will be 300px. Now see on srcset which image has 300px or nearest bigger size. But it mainly identify by brower which image will be load. The browser selects the most appropriate image based on the device's resolution and viewport size.
+```html
+    <img
+      src="meal-full.jpg"
+      srcset="meal.jpg 400w, meal@2x.jpg 800w, meal@3x.jpg 1200w, meal-full.jpg 2396w"
+      class="meal"
+      sizes="(max-width: 480px) 70vw, (max-width: 768px) 700px, (max-width: 1140px) 100vw, 2300px"
+      alt="Responsive design example image"
+    />
+```
+```css
+/* No css like before. CSS width depending on different viewport */
+.meal {
+  /* width: 400px; */
+}
+```
+Purpose: 
+This code improves performance and responsiveness:<br>
+Performance: Ensures that only the most appropriate image is downloaded based on the device resolution and viewport size, reducing unnecessary bandwidth usage. <br>
+Responsiveness: Adapts the image's size to fit the screen dimensions, providing a better user experience on different devices.
+
+**Picture**<br />
+<picture>: The image content changes entirely based on the viewport or device.
+```html
+<picture>
+  <source media="(min-width:650px)" srcset="img_pink_flowers.jpg">
+  <source media="(min-width:465px)" srcset="img_white_flower.jpg">
+  <img src="img_orange_flowers.jpg" alt="Flowers" style="width:auto;">
+</picture>
+```
+- If you need simplicity and performance → <img> with srcset and sizes is better.
+- If you need flexibility and different image content → <picture> is better.
