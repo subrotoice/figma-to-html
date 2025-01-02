@@ -1285,3 +1285,80 @@ NB: Zoom in/out the browser and reload page and see the effect. When we zoom bro
 
 **Resolution Switching(B): [Mobile, Tab, Laptop](https://prnt.sc/XT5zyDM7OXeJ)**<br />
 src: A default fallback image used if srcset isn't supported by the browser.
+
+### **Domain Block**
+
+```jsx
+<div class="section block container block-domain">
+  <header class="block__header">
+    <h2>Starting at $9 per month</h2>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi,
+      cupiditate.
+    </p>
+  </header>
+  <div class="input-group">
+    <input type="text" class="input" placeholder="Enter domain name here..." />
+    <button class="btn btn--accent">
+      <svg class="icon icon--white">
+        <use xlink:href="images/sprite.svg#search"></use>
+      </svg>
+      Search
+    </button>
+  </div>
+  <ul class="list block-domain__prices">
+    <li>.com $9</li>
+    <li>
+      <span class="badge badge--secondary">.sg $10</span>
+    </li>
+    <li>.space $11</li>
+    <li>.info $14</li>
+    <li>.net $10</li>
+    <li>.xyz $10</li>
+  </ul>
+</div>
+```
+
+```css
+/* Buttons: Right Place to add this */
+.btn {
+  outline: 0; /* added */
+}
+
+.btn .icon {
+  /* added */
+  width: 2rem;
+  height: 2rem;
+  margin-right: 1rem;
+  vertical-align: middle;
+}
+
+/* Domain Block */
+.block-domain .input-group {
+  box-shadow: 0 0 30px 20px #e6ebee;
+  border: 0;
+  margin: 4rem auto;
+  max-width: 670px;
+}
+
+.block-domain__prices {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 6rem);
+  justify-items: center;
+  font-size: 2rem;
+  font-weight: 600;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 768px) {
+  .block-domain__prices {
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  }
+}
+```
+
+grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)): Columns number is not fixed, minmax() takes two argument minmum and maximum width. If we give 1fr then if extra space available then it will equally distributed to this column. <br>
+margin: 0 auto: Taking any content center as horizontally. <br>
+vertical-align: middle: If there is a height then we can use this instade of flex or grid
