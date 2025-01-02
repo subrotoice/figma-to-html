@@ -1411,5 +1411,100 @@ vertical-align: middle: If there is a height then we can use this instade of fle
 ### **Plans Block**
 
 ```jsx
+<section class="block container block-plans">
+  <div class="grid grid--1x3">
+    <div class="plan">
+      <div class="card card--secondary">
+        <header class="card__header">
+          <h3 class="plan__name">Entry</h3>
+          <span class="plan__price">$14</span>
+          <span class="plan__billing-cycle">/month</span>
+          <span class="badge badge--primary badge--small">10% off</span>
+          <span class="plan__description">East start on the cloud</span>
+        </header>
+        <div class="card__body">
+          <ul class="list list--tick">
+            <li class="list__item">Unlimited Websites</li>
+            <li class="list__item">Unlimited Bandwidth</li>
+            <li class="list__item">100 GB SSD Storage</li>
+            <li class="list__item">3 GB RAM</li>
+          </ul>
+          <button class="btn btn--outline btn--block">BUY NOW</button>
+        </div>
+      </div>
+    </div>
+    <div class="plan plan--popular">
+      <div class="card card--primary">
+        <header class="card__header">
+          <h3 class="plan__name">Business</h3>
+          <span class="plan__price">$24</span>
+          <span class="plan__billing-cycle">/month</span>
+          <span class="badge badge--secondary badge--small">20% off</span>
+          <span class="plan__description">East start on the cloud</span>
+        </header>
+        <div class="card__body">
+          <ul class="list list--tick">
+            <li class="list__item">Unlimited Websites</li>
+            <li class="list__item">Unlimited Bandwidth</li>
+            <li class="list__item">100 GB SSD Storage</li>
+            <li class="list__item">3 GB RAM</li>
+            <li class="list__item">2 CPU Cores</li>
+          </ul>
+          <button class="btn btn--outline btn--block">BUY NOW</button>
+        </div>
+      </div>
+    </div>
+    <div class="plan">
+      <div class="card card--secondary">
+        <header class="card__header">
+          <h3 class="plan__name">Business plus</h3>
+          <span class="plan__price">$54</span>
+          <span class="plan__billing-cycle">/month</span>
+          <span class="badge badge--primary badge--small">10% off</span>
+          <span class="plan__description">East start on the cloud</span>
+        </header>
+        <div class="card__body">
+          <ul class="list list--tick">
+            <li class="list__item">Unlimited Websites</li>
+            <li class="list__item">Unlimited Bandwidth</li>
+            <li class="list__item">100 GB SSD Storage</li>
+            <li class="list__item">3 GB RAM</li>
+          </ul>
+          <button class="btn btn--outline btn--block">BUY NOW</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+```
 
+```css
+/* Plans */
+.plan {
+  transition: transform 0.2s ease-out;
+}
+
+.plan--popular {
+  transform: scale(1.1);
+}
+
+.plan:hover {
+  transform: scale(1.05);
+}
+
+.plan--popular:hover {
+  transform: scale(1.15);
+}
+
+/* Plans Block */
+.block-plans .grid {
+  gap: 8rem 4rem;
+}
+
+@media screen and (min-width: 768px) {
+  .block-plans .card {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+}
 ```
