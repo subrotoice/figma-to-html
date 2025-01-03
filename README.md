@@ -1678,6 +1678,116 @@ grid grid--1x2 feature: First keep more generic class then specific class
 
 ### **ShowCase Block**
 
-```jsx
+Here more tricky part is image is growing beyond container for larger screen. In tab or small laptop it will not show down scrollbar.
 
+```jsx
+<section class="block block--dark block--skewed-right block-showcase">
+  <header class="block__header">
+    <h2>User-friendly Control Panel</h2>
+  </header>
+  <div class="grid grid--1x2 container">
+    <picture class="block-showcase__image">
+      <source
+        type="image/webp"
+        srcset="images/ipad.webp 1x, images/ipad@2x.webp 2x"
+      />
+      <source
+        type="image/png"
+        srcset="images/ipad.png 1x, images/ipad@2x.png 2x"
+      />
+      <img src="images/ipad.png" alt="" />
+    </picture>
+    <ul class="list">
+      <li>
+        <div class="media">
+          <div class="media__image">
+            <svg class="icon icon--primary">
+              <use xlink:href="images/sprite.svg#snap"></use>
+            </svg>
+          </div>
+          <div class="media__body">
+            <h3 class="media__title">Easy Start & Managed Updates</h3>
+            <p class="media__description">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam
+              incidunt temporibus delectus voluptate, omnis earum illum harum
+              iste dolores? Excepturi!
+            </p>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="media">
+          <div class="media__image">
+            <svg class="icon icon--primary">
+              <use xlink:href="images/sprite.svg#growth"></use>
+            </svg>
+          </div>
+          <div class="media__body">
+            <h3 class="media__title">Staging Git & WP-CLI</h3>
+            <p class="media__description">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam
+              incidunt temporibus delectus voluptate, omnis earum illum harum
+              iste dolores? Excepturi!
+            </p>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="media">
+          <div class="media__image">
+            <svg class="icon icon--primary">
+              <use xlink:href="images/sprite.svg#wordpress"></use>
+            </svg>
+          </div>
+          <div class="media__body">
+            <h3 class="media__title">Dynamic Caching & More</h3>
+            <p class="media__description">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam
+              incidunt temporibus delectus voluptate, omnis earum illum harum
+              iste dolores? Excepturi!
+            </p>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+```
+
+1. width: auto: In situation where image has a width: 100% but we do not want it. We just want original image width.
+2. grid-template-columns: [50% 50%: 1fr 1fr will not work here. Because of image size increase](https://prnt.sc/rJ55eeCaF6Iw)
+
+```css
+/* ShowCase Block */
+.block-showcase__image > img {
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .block-showcase .grid {
+    grid-template-columns: 50% 50%;
+  }
+
+  .block-showcase__image {
+    justify-self: end;
+  }
+
+  .block-showcase__image > img {
+    width: auto;
+    max-width: 700px;
+  }
+}
+
+/* Typography */
+::selection {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+/* Blocks */
+.block--dark h1,
+.block--dark h2,
+.block--dark h3 {
+  color: #fff;
+}
 ```
