@@ -150,6 +150,10 @@ Typography: h1, h2..., P all these
 
 NB: Mobile version: Font and everything will be large then desktop version
 
+# **Components**
+
+As we are following bottom up approach. First we build components and build blocks using this components.
+
 ### **Links**
 
 ```css
@@ -187,9 +191,9 @@ NB: [Sort all css Properties using Command Palette](https://prnt.sc/cS10hYVx1cME
 
 ## Create a components folder and keep all markup of individual component
 
-### **Badges**
+### **BEM: Block Element Modifier**
 
-Block Element Modifier (BEM): CSS class naming convention.
+CSS class naming convention. -- indecates variation. \_\_ indecates inside class
 
 ```jsx
 "badge badge--primary", "block__element--modifier";
@@ -200,6 +204,8 @@ BEM divides a class name into three parts:
 1. Block (badge): A "block" is a reusable UI element such as a button, card, or badge.
 2. Element (block\_\_element): Represents a part or child of the block, separated by \_\_ (double underscores).
 3. Modifier (badge--primary): Represents a variation or state of a block/element, separated by -- (double dashes).
+
+### **Badges**
 
 ```html
 <span class="badge badge--primary">10% Off 1</span>
@@ -1202,6 +1208,10 @@ NB: Styling in html tag is not entertained here. But if necessary you may.
 }
 ```
 
+# **Blocks**
+
+Use different component to build bloks
+
 ### **Hero / Banner**
 
 Notice: First place generic class then specific section class ie. hero
@@ -1507,4 +1517,167 @@ vertical-align: middle: If there is a height then we can use this instade of fle
     margin: 0 auto;
   }
 }
+```
+
+### **Features Block**
+
+First need to create small thing then go for big (bottom up). First do work of <grid grid--1x2 freature> then <block container>
+
+- To see proper image is loading or not we can verify using network tab. Zoom 200, 300 and [See](https://prnt.sc/vjtKS8-MHQ4M)
+
+```jsx
+<section class="block container">
+  <header class="block__header">
+    <h2>Host on the Cloud to Keep Growing</h2>
+    <p>
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur
+      blanditiis quo deserunt accusantium.
+    </p>
+  </header>
+  <article class="grid grid--1x2 feature">
+    <div class="feature__content">
+      <span class="icon-container">
+        <svg class="icon icon--primary">
+          <use xlink:href="images/sprite.svg#easy"></use>
+        </svg>
+      </span>
+      <h3 class="feature__heading">Super Easy to Use</h3>
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus,
+        totam eius temporibus ea delectus quos nihil sed, neque, consectetur hic
+        expedita explicabo.
+      </p>
+      <a href="#" class="link-arrow">
+        Learn More
+      </a>
+    </div>
+    <picture>
+      <source
+        type="image/webp"
+        srcset="
+              images/easy.webp    1x,
+              images/easy@2x.webp 2x,
+              images/easy@3x.webp 3x
+            "
+      />
+      <source
+        type="image/jpg"
+        srcset="
+              images/easy.jpg    1x,
+              images/easy@2x.jpg 2x,
+              images/easy@3x.jpg 3x
+            "
+      />
+      <img class="feature__image" src="images/easy@2x.jpg" alt="Easy" />
+    </picture>
+  </article>
+  <article class="grid grid--1x2 feature">
+    <div class="feature__content">
+      <span class="icon-container">
+        <svg class="icon icon--primary">
+          <use xlink:href="images/sprite.svg#easy"></use>
+        </svg>
+      </span>
+      <h3 class="feature__heading">Simply Fast Websites</h3>
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus,
+        totam eius temporibus ea delectus quos nihil sed, neque, consectetur hic
+        expedita explicabo.
+      </p>
+      <a href="#" class="link-arrow">
+        Learn More
+      </a>
+    </div>
+    <picture>
+      <source
+        type="image/webp"
+        srcset="
+              images/fast.webp    1x,
+              images/fast@2x.webp 2x,
+              images/fast@3x.webp 3x
+            "
+      />
+      <source
+        type="image/jpg"
+        srcset="
+              images/fast.jpg    1x,
+              images/fast@2x.jpg 2x,
+              images/fast@3x.jpg 3x
+            "
+      />
+      <img class="feature__image" src="images/fast@2x.jpg" alt="Easy" />
+    </picture>
+  </article>
+  <article class="grid grid--1x2 feature">
+    <div class="feature__content">
+      <span class="icon-container">
+        <svg class="icon icon--primary">
+          <use xlink:href="images/sprite.svg#easy"></use>
+        </svg>
+      </span>
+      <h3 class="feature__heading">Super Easy to Use</h3>
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus,
+        totam eius temporibus ea delectus quos nihil sed, neque, consectetur hic
+        expedita explicabo.
+      </p>
+      <a href="#" class="link-arrow">
+        Learn More
+      </a>
+    </div>
+    <picture>
+      <source
+        type="image/webp"
+        srcset="
+              images/easy.webp    1x,
+              images/easy@2x.webp 2x,
+              images/easy@3x.webp 3x
+            "
+      />
+      <source
+        type="image/jpg"
+        srcset="
+              images/easy.jpg    1x,
+              images/easy@2x.jpg 2x,
+              images/easy@3x.jpg 3x
+            "
+      />
+      <img class="feature__image" src="images/easy@2x.jpg" alt="Easy" />
+    </picture>
+  </article>
+</section>
+```
+
+grid grid--1x2 feature: First keep more generic class then specific class
+
+```css
+/* Feature Block */
+.feature {
+  gap: 4rem 2rem;
+  margin: 8rem 0;
+}
+
+.feature:first-of-type {
+  margin-top: 6rem;
+}
+
+.feature__heading {
+  margin-top: 1rem 0;
+}
+
+.feature__image {
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .feature:nth-of-type(even) .feature__content {
+    order: 2;
+  }
+}
+```
+
+### **ShowCase Block**
+
+```jsx
+
 ```
