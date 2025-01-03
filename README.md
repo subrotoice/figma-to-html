@@ -1791,3 +1791,62 @@ Here more tricky part is image is growing beyond container for larger screen. In
   color: #fff;
 }
 ```
+
+### **Testimonials Block**
+
+Just use testimonials card and add blcok header section
+
+```jsx
+<div class="block">
+  <header class="block__header">
+    <h2>What our Customer are Saying</h2>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
+      possimus.
+    </p>
+  </header>
+  <div class="container">
+    <div class="card testimonial">
+      <div class="grid grid--1x2">
+        <div class="testimonial__image">
+          <img src="images/testimonial.jpg" alt="A Happy, Smiling Customer" />
+          <span class="icon-container icon-container--accent">
+            <svg class="icon icon--white icon--small">
+              <use xlink:href="images/sprite.svg#quotes"></use>
+            </svg>
+          </span>
+        </div>
+        <blockquote class="quote">
+          <p class="quote__text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam
+            soluta cumque cum architecto nemo. Ex veritatis eos tempore dolores
+            recusandae!
+          </p>
+          <footer>
+            <div class="media">
+              <div class="media__image">
+                <svg class="icon icon--primary">
+                  <use xlink:href="images/sprite.svg#line"></use>
+                </svg>
+              </div>
+              <div class="media__body">
+                <h3 class="media__title">John Smith</h3>
+                <p class="media__description">ABC Company</p>
+              </div>
+            </div>
+          </footer>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+Adding css to Blocks section so all margin after header will be consistant.
+
+```css
+/* Blocks */
+.block__header {
+  margin-bottom: 4rem;
+}
+```
