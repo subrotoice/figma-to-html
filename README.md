@@ -2041,6 +2041,22 @@ order: -1: by default order: 0, So it take content to first
 
 ### **Putting It All Together**
 
-```jsx
+Put all code block one by one and fix layout issues. Fix them in isolation so that there is only one element in this component. You can create playground.html for this.
 
+### **Animations: AOS Animation**
+
+[Search on Google: Animate on Scroll(AOS)](https://www.google.com/search?q=aos+animation)
+
+```jsx
+// Step 1
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+// Step 2
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
+// Step 3: Use | Place it in any html tag
+<header class="block__header hero__content" data-aos="fade-right">
 ```
