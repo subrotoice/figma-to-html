@@ -2117,4 +2117,26 @@ npm i -g parcel-bundler
 parcel index.html
 ```
 
-Open Website: http://localhost:1234
+Open Website: http://localhost:1234 <br>
+
+**Build Project**
+
+```bash
+parcel build index.html
+```
+
+If error create file .htmlnanorc (root directory) and put
+
+```js
+{
+    "minifySvg": false
+}
+```
+
+### **Production**
+
+1. netlify.com
+2. Build command: "parcel build index.html"
+3. Publish directory: "dist"
+
+NB: You can change site name
