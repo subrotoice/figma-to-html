@@ -3,7 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <meta name="description" content="Build Your website just for $100" />
+    <meta property="og:title" content="Understanding Open Graph Properties" />
+    <meta
+      property="og:description"
+      content="Build Your website just for $100"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://example.com/image.jpg" />
+    <meta property="og:url" content="https://edeves.com" />
+    <title>Subroto Biswas - Grow your business just for $100</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -17,7 +26,7 @@
   <body>
     <header>
       <nav class="nav collapsible">
-        <a class="nav__brand" href="/" class="">
+        <a class="nav__brand" href="/">
           <img src="./images/logo.png" alt="" />
         </a>
         <svg class="icon icon--white nav__toggler">
@@ -388,10 +397,26 @@
       </div>
     </div>
 
-    <section class="block block--dark footer">
+    <!-- CallOut  -->
+    <div class="callout callout--primary">
+      <div class="grid grid--1x2">
+        <div class="callout__content">
+          <h2 class="callout__heading">Ready to Get Started?</h2>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veniam,
+            harum maxime. Nisi dolores suscipit distinctio voluptate, veritatis
+            nulla ad labore!
+          </p>
+        </div>
+        <a class="btn btn--secondary btn--streatched" href="">Get Stared</a>
+      </div>
+    </div>
+
+    <!-- Footer Block  -->
+    <footer class="block block--dark footer">
       <div class="grid container footer__sections">
         <section class="collapsible collapsible--expanded footer__section">
-          <header class="collapsible__header">
+          <div class="collapsible__header">
             <h2 class="collapsible__heading footer__heading">Item 1</h2>
             <span
               class="icon-container icon-container--small icon-container--grey collapsible__chevron-container"
@@ -402,7 +427,7 @@
                 <use xlink:href="images/sprite.svg#chevron"></use>
               </svg>
             </span>
-          </header>
+          </div>
           <div class="collapsible__content">
             <ul class="list">
               <li>
@@ -418,7 +443,7 @@
           </div>
         </section>
         <section class="collapsible footer__section">
-          <header class="collapsible__header">
+          <div class="collapsible__header">
             <h2 class="collapsible__heading footer__heading">Item 2</h2>
             <span
               class="icon-container icon-container--small icon-container--grey collapsible__chevron-container"
@@ -429,7 +454,7 @@
                 <use xlink:href="images/sprite.svg#chevron"></use>
               </svg>
             </span>
-          </header>
+          </div>
           <div class="collapsible__content">
             <ul class="list">
               <li>
@@ -445,7 +470,7 @@
           </div>
         </section>
         <section class="collapsible footer__section">
-          <header class="collapsible__header">
+          <div class="collapsible__header">
             <h2 class="collapsible__heading footer__heading">Item 3</h2>
             <span
               class="icon-container icon-container--small icon-container--grey collapsible__chevron-container"
@@ -456,7 +481,7 @@
                 <use xlink:href="images/sprite.svg#chevron"></use>
               </svg>
             </span>
-          </header>
+          </div>
           <div class="collapsible__content">
             <ul class="list">
               <li>
@@ -472,7 +497,7 @@
           </div>
         </section>
         <section class="collapsible footer__section">
-          <header class="collapsible__header">
+          <div class="collapsible__header">
             <h2 class="collapsible__heading footer__heading">Item 2</h2>
             <span
               class="icon-container icon-container--small icon-container--grey collapsible__chevron-container"
@@ -483,7 +508,7 @@
                 <use xlink:href="images/sprite.svg#chevron"></use>
               </svg>
             </span>
-          </header>
+          </div>
           <div class="collapsible__content">
             <ul class="list">
               <li>
@@ -498,12 +523,12 @@
             </ul>
           </div>
         </section>
-        <section class="footer__brand">
+        <div class="footer__brand">
           <img src="images/logo.svg" alt="" />
           <p class="footer__copyright">Copyright 2025 Subroto</p>
-        </section>
+        </div>
       </div>
-    </section>
+    </footer>
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>

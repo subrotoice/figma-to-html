@@ -2060,3 +2060,22 @@ Put all code block one by one and fix layout issues. Fix them in isolation so th
 // Step 3: Use | Place it in any html tag
 <header class="block__header hero__content" data-aos="fade-right">
 ```
+
+### **Search Engine Optimization**
+
+[og: for Open Graph](https://ogp.me)
+
+```jsx
+<meta name="description" content="Build Your website just for $100" />
+<meta property="og:title" content="Understanding Open Graph Properties" />
+<meta property="og:description" content="Build Your website just for $100" />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="https://example.com/image.jpg" />
+<meta property="og:url" content="https://edeves.com" />
+<title>Subroto Biswas - Grow your business just for $100</title>
+```
+
+### **HTML and CSS Validation**
+
+[HTML Validator](https://validator.w3.org/)<br>
+[CSS Validator](https://jigsaw.w3.org/css-validator)
