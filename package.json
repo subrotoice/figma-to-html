@@ -1,0 +1,15 @@
+{
+  "name": "figma-to-html",
+  "version": "1.0.0",
+  "description": "1. index.html\r 2. normalize.css(https://necolas.github.io/normalize.css) in css/normalize.css\r 3. style.css in css folder\r    index.html",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5"
+  }
+}

@@ -2093,3 +2093,28 @@ Before deploy need to prepere for production. This is why we need build tool
 - Webpack (Popular one, but need a lot of configuration)
 - Rollup
 - Parcel (Blazing Fast, zero configuration)
+
+**Parcel Use**<br>
+Step 1
+
+```bash
+npm init -y
+```
+
+Step 2: devDependencies
+
+```bash
+npm i -D parcel-bundler
+```
+
+Step 3: Install golabally
+
+```bash
+npm i -g parcel-bundler
+```
+
+```bash
+parcel index.html
+```
+
+Open Website: http://localhost:1234
