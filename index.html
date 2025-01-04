@@ -14,52 +14,98 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <div class="block">
-      <header class="block__header">
-        <h2>What our Customer are Saying</h2>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
-          possimus.
-        </p>
-      </header>
-      <div class="container">
-        <div class="card testimonial">
-          <div class="grid grid--1x2">
-            <div class="testimonial__image">
-              <img
-                src="images/testimonial.jpg"
-                alt="A Happy, Smiling Customer"
-              />
-              <span class="icon-container icon-container--accent">
-                <svg class="icon icon--white icon--small">
-                  <use xlink:href="images/sprite.svg#quotes"></use>
-                </svg>
-              </span>
-            </div>
-            <blockquote class="quote">
-              <p class="quote__text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam
-                soluta cumque cum architecto nemo. Ex veritatis eos tempore
-                dolores recusandae!
-              </p>
-              <footer>
-                <div class="media">
-                  <div class="media__image">
-                    <svg class="icon icon--primary">
-                      <use xlink:href="images/sprite.svg#line"></use>
-                    </svg>
-                  </div>
-                  <div class="media__body">
-                    <h3 class="media__title">John Smith</h3>
-                    <p class="media__description">ABC Company</p>
-                  </div>
-                </div>
-              </footer>
-            </blockquote>
+    <section class="block block--dark footer">
+      <div class="grid container footer__sections">
+        <section class="collapsible collapsible--expanded footer__section">
+          <header class="collapsible__header">
+            <h2 class="collapsible__heading footer__heading">Item 1</h2>
+            <span
+              class="icon-container icon-container--small icon-container--grey collapsible__chevron-container"
+            >
+              <svg
+                class="icon icon--extra--small icon--white collapsible__chevron"
+              >
+                <use xlink:href="images/sprite.svg#chevron"></use>
+              </svg>
+            </span>
+          </header>
+          <div class="collapsible__content">
+            <ul class="list">
+              <li><a href="">Website Hosting</a></li>
+              <li><a href="">Free Automated Wordpress</a></li>
+              <li><a href="">Migrations</a></li>
+            </ul>
           </div>
-        </div>
+        </section>
+        <section class="collapsible footer__section">
+          <header class="collapsible__header">
+            <h2 class="collapsible__heading footer__heading">Item 2</h2>
+            <span
+              class="icon-container icon-container--small icon-container--grey collapsible__chevron-container"
+            >
+              <svg
+                class="icon icon--extra--small icon--white collapsible__chevron"
+              >
+                <use xlink:href="images/sprite.svg#chevron"></use>
+              </svg>
+            </span>
+          </header>
+          <div class="collapsible__content">
+            <ul class="list">
+              <li><a href="">About</a></li>
+              <li><a href="">Affiliates</a></li>
+              <li><a href="">Blog</a></li>
+            </ul>
+          </div>
+        </section>
+        <section class="collapsible footer__section">
+          <header class="collapsible__header">
+            <h2 class="collapsible__heading footer__heading">Item 3</h2>
+            <span
+              class="icon-container icon-container--small icon-container--grey collapsible__chevron-container"
+            >
+              <svg
+                class="icon icon--extra--small icon--white collapsible__chevron"
+              >
+                <use xlink:href="images/sprite.svg#chevron"></use>
+              </svg>
+            </span>
+          </header>
+          <div class="collapsible__content">
+            <ul class="list">
+              <li><a href="">Contact</a></li>
+              <li><a href="">Knowledge Base</a></li>
+              <li><a href="">FAQ</a></li>
+            </ul>
+          </div>
+        </section>
+        <section class="collapsible footer__section">
+          <header class="collapsible__header">
+            <h2 class="collapsible__heading footer__heading">Item 2</h2>
+            <span
+              class="icon-container icon-container--small icon-container--grey collapsible__chevron-container"
+            >
+              <svg
+                class="icon icon--extra--small icon--white collapsible__chevron"
+              >
+                <use xlink:href="images/sprite.svg#chevron"></use>
+              </svg>
+            </span>
+          </header>
+          <div class="collapsible__content">
+            <ul class="list">
+              <li><a href="">About</a></li>
+              <li><a href="">Affiliates</a></li>
+              <li><a href="">Blog</a></li>
+            </ul>
+          </div>
+        </section>
+        <section class="footer__brand">
+          <img src="images/logo.svg" alt="" />
+          <p class="footer__copyright">Copyright 2025 Subroto</p>
+        </section>
       </div>
-    </div>
+    </section>
     <script src="./js/main.js"></script>
   </body>
 </html>

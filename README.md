@@ -1850,3 +1850,197 @@ Adding css to Blocks section so all margin after header will be consistant.
   margin-bottom: 4rem;
 }
 ```
+
+### **Footer Block**
+
+```jsx
+<section class="block block--dark footer">
+  <div class="grid container footer__sections">
+    <section class="collapsible collapsible--expanded footer__section">
+      <header class="collapsible__header">
+        <h2 class="collapsible__heading footer__heading">Item 1</h2>
+        <span class="icon-container icon-container--small icon-container--grey collapsible__chevron-container">
+          <svg class="icon icon--extra--small icon--white collapsible__chevron">
+            <use xlink:href="images/sprite.svg#chevron"></use>
+          </svg>
+        </span>
+      </header>
+      <div class="collapsible__content">
+        <ul class="list">
+          <li>
+            <a href="">Website Hosting</a>
+          </li>
+          <li>
+            <a href="">Free Automated Wordpress</a>
+          </li>
+          <li>
+            <a href="">Migrations</a>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="collapsible footer__section">
+      <header class="collapsible__header">
+        <h2 class="collapsible__heading footer__heading">Item 2</h2>
+        <span class="icon-container icon-container--small icon-container--grey collapsible__chevron-container">
+          <svg class="icon icon--extra--small icon--white collapsible__chevron">
+            <use xlink:href="images/sprite.svg#chevron"></use>
+          </svg>
+        </span>
+      </header>
+      <div class="collapsible__content">
+        <ul class="list">
+          <li>
+            <a href="">About</a>
+          </li>
+          <li>
+            <a href="">Affiliates</a>
+          </li>
+          <li>
+            <a href="">Blog</a>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="collapsible footer__section">
+      <header class="collapsible__header">
+        <h2 class="collapsible__heading footer__heading">Item 3</h2>
+        <span class="icon-container icon-container--small icon-container--grey collapsible__chevron-container">
+          <svg class="icon icon--extra--small icon--white collapsible__chevron">
+            <use xlink:href="images/sprite.svg#chevron"></use>
+          </svg>
+        </span>
+      </header>
+      <div class="collapsible__content">
+        <ul class="list">
+          <li>
+            <a href="">Contact</a>
+          </li>
+          <li>
+            <a href="">Knowledge Base</a>
+          </li>
+          <li>
+            <a href="">FAQ</a>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="collapsible footer__section">
+      <header class="collapsible__header">
+        <h2 class="collapsible__heading footer__heading">Item 2</h2>
+        <span class="icon-container icon-container--small icon-container--grey collapsible__chevron-container">
+          <svg class="icon icon--extra--small icon--white collapsible__chevron">
+            <use xlink:href="images/sprite.svg#chevron"></use>
+          </svg>
+        </span>
+      </header>
+      <div class="collapsible__content">
+        <ul class="list">
+          <li>
+            <a href="">About</a>
+          </li>
+          <li>
+            <a href="">Affiliates</a>
+          </li>
+          <li>
+            <a href="">Blog</a>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="footer__brand">
+      <img src="images/logo.svg" alt="" />
+      <p class="footer__copyright">Copyright 2025 Subroto</p>
+    </section>
+  </div>
+</section>
+```
+
+.footer .collapsible\_\_content { opacity: 1; max-height: 100%; }: We hide element using opacity: 0. So we are not using display: none here<br>
+order: -1: by default order: 0, So it take content to first
+
+```css
+/* Footer Block */
+.footer {
+  background: #232323;
+}
+
+.footer__section {
+  padding: 2rem;
+  border-bottom: 1px solid #393939;
+}
+
+.footer__heading {
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.footer__brand {
+  margin-top: 5rem;
+  text-align: center;
+}
+
+.footer__brand > img {
+  max-width: 230px;
+}
+
+.footer__copyright {
+  font-style: 2.1rem;
+  color: #fff;
+  opacity: 0.3;
+}
+
+@media screen and (min-width: 768px) {
+  .footer a {
+    color: #777;
+    transition: color 0.3s ease-in;
+  }
+
+  .footer a:hover {
+    color: #fff;
+  }
+
+  .footer__sections {
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  }
+
+  .footer__section .list {
+    margin: 0;
+  }
+
+  .footer .collapsible__chevron-container {
+    display: none;
+  }
+
+  .footer .collapsible__content {
+    opacity: 1;
+    max-height: 100%;
+  }
+
+  .footer__brand {
+    order: -1;
+  }
+
+  .footer__section {
+    border: 0;
+  }
+
+  .footer__copyright {
+    font-size: 1.5rem;
+  }
+
+  .footer__brand {
+    margin-top: 1rem;
+  }
+
+  .footer__heading {
+    font-size: 1.6rem;
+  }
+}
+```
+
+### **Putting It All Together**
+
+```jsx
+
+```
