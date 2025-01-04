@@ -2079,3 +2079,17 @@ Put all code block one by one and fix layout issues. Fix them in isolation so th
 
 [HTML Validator](https://validator.w3.org/)<br>
 [CSS Validator](https://jigsaw.w3.org/css-validator)
+
+### **Building for Production**
+
+Before deploy need to prepere for production. This is why we need build tool
+
+- Combine CSS and JS files
+- Minify JS/CSS files (Remove all spaces and comments)
+- Optimize images
+
+**Build Tools**
+
+- Webpack (Popular one, but need a lot of configuration)
+- Rollup
+- Parcel (Blazing Fast, zero configuration)
