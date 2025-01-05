@@ -2139,4 +2139,14 @@ If error create file .htmlnanorc (root directory) and put
 2. Build command: "parcel build index.html"
 3. Publish directory: "dist"
 
-NB: You can change site name
+NB: You can change site name <br>
+
+Change anything and push to github. You are good to go.
+
+### **Measuring the Site's Performance**
+
+[pagespeed.web.dev](https://pagespeed.web.dev) <br />
+Follow all lighthouse suggestion.
+
+- @import "./normalize.css": Parcel combine into one
+- Chrome Store Lighthouse: If provide same suggestion. But Purcel minify and combine asset that is not possible during development in lighthouse
