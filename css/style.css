@@ -677,6 +677,10 @@ a {
   align-items: center;
 }
 
+.nav img {
+  width: 70%;
+}
+
 /* better then .nav .list */
 .nav__list {
   width: 100%;
